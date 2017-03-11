@@ -7,10 +7,10 @@ predicates
 		
 	clauses
 	tanam(A,B,C):-petani(A),sayur(B),buah(C),memakan(A,B,C).
-	%A memakan B,Y jika A adalah petani dan B adalah sayur dan C adalah buah
+	%A memakan B,C jika A adalah petani dan B adalah sayur dan C adalah buah
 	%% A memakan B dan C
 	
-	petani(sri). %vera adalah petani
+	petani(sri). %sri adalah petani
 	petani(jordi).
 		sayur(wortel).
 		sayur(kol).
