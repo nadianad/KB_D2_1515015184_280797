@@ -1,0 +1,47 @@
+Untuk mengetahui terjadinya lacakbalik, akan diamati langkah demi langkah bagaimana Visual Prolog mencari solusi dari goal yang diberikan :
+
+1.Visual Prolog memanggil predikat pembunuh dengan variabel X.  
+  Untuk mencoba menjawab panggilan ini, Visual Prolog mencari di program untuk pencocokan. 
+  Ditemukan kecocokan dengan klausa pembunuh, dan variable X diunifikasikan dengan variabel Pembunuh.
+
+2.Setelah eksekusi GOAL dijalanakan maka Prolog akan memulai pelacakan dari fakta 
+  CLAUSES pertama yaitu data orang-orang yang terlibat dalam kasus pembunuhan, 
+  dan korban pembunuhan yaitu siti yang dibunuh dengan pentungan. Serta data-data orang yang berselingkuh. 
+  Sehigga visual prolog akan memulai dengan memberikan titik awal pada clauses pembunuh(Pembunuh).
+
+3.Dari fakta ini argument X akan diikat dengan argument Pembunuh. Dari fakta pembunuh ini terdapat 
+  peRnyataan syarat dan prolog akan melakukan unifikasi terhadap pernyataan syarat-syarat tersebut. 
+  Pernyataan syarat pertama orang( Pembunuh,_,_ ). Prolog akan memanggil fakta orang untuk 
+  mengetahui pembunuh. Fakta pertama yang di dapat adalah budi.
+
+4.Selanjutnya prolog akan memanggil fakta terbunuh dan didapat faktanya adalah siti. 
+  kemudian prolog akan mencari fakta dari dicurigai(X), dari fakta ini kemudian akan 
+  dilakukan proses pencarian pernyataan bersyarat dan sekali lagi prolog akan melakukan 
+  unifikasi terhadap pernyataan syarat-syarat tersebut. Pernyataan syarat pertama 
+  terbunuh_dengan(siti,Senjata). Prolog akan memanggil fakta terbunuh_dengan untuk mengetahui 
+  senjata yang dipakai. Fakta yang di dapat adalah terbunuh_dengan(siti,pentungan).
+
+5.Kemudian prolog akan mencari fakta dari benda yang cara kerjanya mirip senjata dari 
+  pernyataan bersyarat cara_kerja_mirip(Benda,Senjata). Lalu prolog akan memanggil fakta 
+  cara_kerja_mirip untuk mengetahui benda apa yang cara kerjanya mirip pentungan. 
+  Fakta yang didapat adalah cara_kerja_mirip(kaki_palsu,pentungan).
+
+6.Kemudian prolog akan mencari fakta dari kemungkinan_milik(X,Benda). 
+  Pada fakta ini ternyata ditemukan pernyataan bersyarat lagi yaitu pernyataan milik(X,Benda). 
+  Dari pernyataan ini akan dicari fakta bahwa siapa pemilik kaki palsu dan didapatkan fakta bahwa milik(budi,kaki_palsu).
+
+7.Setelah itu prolog kembali memeriksa fakta dari pembunuh karena masih ada pernyataan 
+  bersyarat yang belum diperiksa yaitu fakta ternodai(Pembunuh,Zat). Lalu prolog akan memanggil 
+  fakta ternodai untuk melihat zat apa yang menodai budi, dan didapat fakta bahwa ternodai(budi,darah).
+
+8.Setelah itu prolog akan memeriksa fakta terakhir yaitu ternodai(Terbunuh,Zat) 
+  dan didapat fakta bahwa ternodai(siti,darah). Dari fakta ini ditemukan bahwa siti mempunyai noda yang sama dengan budi.
+
+9.Berdasarkan kecocokan dari fakta-fakta diatas dari awal hingga akhir, 
+  sehingga prolog menetapkan bahwa pembunuh siti adalah budi.
+
+GOAL
+pembunuh(X).
+
+
+	
