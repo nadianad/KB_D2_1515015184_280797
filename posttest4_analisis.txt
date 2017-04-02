@@ -1,4 +1,4 @@
-Untuk mengetahui terjadinya lacakbalik, akan diamati langkah demi langkah bagaimana Visual Prolog mencari solusi dari goal yang diberikan :
+9:24 PM 3/24/2017Untuk mengetahui terjadinya lacakbalik, akan diamati langkah demi langkah bagaimana Visual Prolog mencari solusi dari goal yang diberikan :
 
 1.Visual Prolog memanggil predikat pembunuh dengan variabel X.  
   Untuk mencoba menjawab panggilan ini, Visual Prolog mencari di program untuk pencocokan. 
